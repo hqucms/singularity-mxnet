@@ -1,5 +1,5 @@
 BootStrap:docker
-From:mxnet/python:gpu
+From:nvidia/cuda:8.0-cudnn6-devel
 
 %labels
 MAINTAINER Huilin Qu
@@ -8,6 +8,13 @@ MAINTAINER Huilin Qu
 exec echo "The runscript is the containers default runtime command!"
 
 %post
+
+# download and run NIH HPC NVIDIA driver installer
+wget gpu4singularity 
+chmod u+rwx gpu4singularity
+./gpu4singularity --verbose
+rm gpu4singularity
+
+pip install matplotlib numexpr numpy pandas scikit-learn scipy tables mxnet-cu80
 mkdir -p /data
-pip install matplotlib numexpr numpy pandas scikit-learn scipy tables
 echo "Done!"
