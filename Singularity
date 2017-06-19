@@ -5,7 +5,7 @@ From:nvidia/cuda:8.0-cudnn6-devel
 MAINTAINER Huilin Qu
 
 %runscript
-exec echo "The runscript is the containers default runtime command!"
+exec echo "The runscript is the container default runtime command!"
 
 %post
 
