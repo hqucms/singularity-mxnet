@@ -15,6 +15,7 @@ chmod u+rwx gpu4singularity
 ./gpu4singularity --verbose
 rm gpu4singularity
 
+apt-get update && apt-get -y install pip
 pip install matplotlib numexpr numpy pandas scikit-learn scipy tables mxnet-cu80
 mkdir -p /data
 echo "Done!"
